@@ -4,13 +4,13 @@ A Codex skill for auditing and cleaning up one project's Codex tasks and Git bra
 
 ## Install
 
-In Codex, ask its built-in installer:
+Paste this into Codex. It uses Codex's built-in skill installer; no separate CLI is required:
 
 ```text
-$skill-installer Install the skill at the root of https://github.com/virusimmortal00/tidyup-codex as tidyup-codex in my user skills.
+Install the tidyup-codex skill from https://github.com/virusimmortal00/tidyup-codex into my user skills. The repository root contains SKILL.md. Verify that Codex discovers it. Do not run the cleanup yet.
 ```
 
-For a one-line terminal install, use the [Skills CLI](https://github.com/vercel-labs/skills):
+If you prefer a terminal, the [Skills CLI](https://github.com/vercel-labs/skills) is optional:
 
 ```sh
 bunx skills@1.7.0 add virusimmortal00/tidyup-codex --agent codex --global --yes
