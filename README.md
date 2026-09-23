@@ -41,6 +41,6 @@ Cleanup archives verified finished tasks and deletes verified expendable local a
 
 - Codex with the task-management tools named in the skill, multi-agent support, and access to GPT-6 Astra.
 - A Git repository and access to its remotes and pull-request metadata for branch cleanup.
-- The sidebar tool may return only 50 ordinary tasks at a time and has no cursor. The skill first checks for a complete read-only host inventory, which can expose older local tasks. If no reliable complete inventory exists, it audits and archives in verified batches and defers branch deletion while coverage remains incomplete.
+- The app sidebar tool may return only 50 ordinary tasks at a time and has no cursor. The skill prefers the documented, paginated Codex App Server `thread/list` API to inventory all accessible tasks on each host. If that API is unavailable, it checks local state and then falls back to verified sidebar batches; it defers branch deletion while coverage remains incomplete.
 
 The skill is stored at the repository root, so this repository itself is the installable skill folder. It does not require a plugin or an MCP server.
