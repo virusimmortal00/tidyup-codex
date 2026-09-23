@@ -1,0 +1,33 @@
+# tidyup-codex
+
+A Codex skill for auditing and cleaning up one project's Codex tasks and Git branches. It asks up to three GPT-6 Astra subagents to review tasks, local branches, and remote branches; the main agent stages the findings and carries out supported cleanup.
+
+## Install
+
+Clone this repository into your user skill directory:
+
+```sh
+git clone https://github.com/virusimmortal00/tidyup-codex.git ~/.agents/skills/tidyup-codex
+```
+
+Codex also discovers a checked-in copy at `<repo>/.agents/skills/tidyup-codex/`. Restart Codex if the skill does not appear after installation.
+
+## Use
+
+Run from the Codex project you want to clean:
+
+```text
+$tidyup-codex Audit and clean up this project's stale tasks and branches.
+```
+
+For a report without changes, ask for an audit only.
+
+Cleanup archives verified finished tasks and deletes verified expendable local and remote branches without a second permission prompt. It keeps active, uncertain, and protected work. Review [SKILL.md](SKILL.md) before using it; this is an instruction-based workflow, not a standalone command.
+
+## Requirements and limits
+
+- Codex with the task-management tools named in the skill, multi-agent support, and access to GPT-6 Astra.
+- A Git repository and access to its remotes and pull-request metadata for branch cleanup.
+- The open-task listing may return only 50 ordinary tasks at a time and has no cursor. The skill audits verified tasks in batches, archives eligible tasks to reveal older ones, and defers branch deletion until it can establish a complete inventory.
+
+The skill is stored at the repository root, so this repository itself is the installable skill folder. It does not require a plugin or an MCP server.
